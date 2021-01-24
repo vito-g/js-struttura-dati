@@ -185,4 +185,7 @@ cards.forEach((element) => {
   if(!nameList.includes(element.cardName)) {
     nameList.push(element.cardName);
   }
-})
+});
+
+
+console.log(nameList);
