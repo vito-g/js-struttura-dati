@@ -170,7 +170,7 @@ const cards = [
     story: 'Il Road-runner non è mai stato guardato in volto da nessuno.',
 
     score: {
-      power: 5,  // r
+      power: 4,  // r
       toughness: 2
     }
 
@@ -179,23 +179,45 @@ const cards = [
 
 console.log(cards);
 // --------------------------------------------------------------------------------
-//Creo un array che ha per elementi i differenti valori associati alla chiave cardName presente negli oggetti dell'array cards.
-const nameList = [];
+// //Creo un array che ha per elementi i differenti valori associati alla chiave cardName presente negli oggetti dell'array cards.
+// const nameList = [];
+// cards.forEach((element) => {
+//   if(!nameList.includes(element.cardName)) {
+//     nameList.push(element.cardName);
+//   }
+// });
+//
+//
+// console.log(nameList);
+//
+//
+// //Vado a crearmi una cost in cui salvare la posizione dell'elemento "select" del DOM di modo da strutturare poi,in esso, qui in javascript, le opzioni che lo riguarderanno e che ho salvato in nameList attraverso il forEach applicato all'array cards:
+// const elSelector = document.getElementById('selector');
+//
+// /*Il forEach() sottostante ciclando sull'array "nameList" eseguirà una funzione su ciascun suo elemento (valori di cardName di cards) di modo che nel DOM si generino tutti i tag "option", all'interno dell'elemento "select" di id "selector" (salvato in "elSelector"), che abbiano come valore e contenuto proprio i cardName.*/
+// nameList.forEach((element) => {  // element è la stringa type
+//   elSelector.innerHTML += `
+//     <option value="${element}">${element}</option>
+//   `
+// });
+// -------------------------------------------------------------------------------------------------------------------------------------
+//Creo un array che ha per elementi i differenti valori associati alla chiave "power" della chive "score",presente negli oggetti dell'array cards.
+const powerList = [];
 cards.forEach((element) => {
-  if(!nameList.includes(element.cardName)) {
-    nameList.push(element.cardName);
+  if(!powerList.includes(element.score.power)) {
+    powerList.push(element.score.power);
   }
 });
 
 
-console.log(nameList);
+console.log(powerList);
 
 
-//Vado a crearmi una cost in cui salvare la posizione dell'elemento "select" del DOM di modo da strutturare poi,in esso, qui in javascript, le opzioni che lo riguarderanno e che ho salvato in nameList attraverso il forEach applicato all'array cards:
+//Vado a crearmi una cost in cui salvare la posizione dell'elemento "select" del DOM di modo da strutturare poi,in esso, qui in javascript, le opzioni che lo riguarderanno e che ho salvato in powerList attraverso il forEach applicato all'array cards:
 const elSelector = document.getElementById('selector');
 
-/*Il forEach() sottostante ciclando sull'array "nameList" eseguirà una funzione su ciascun suo elemento (valori di cardName di cards) di modo che nel DOM si generino tutti i tag "option", all'interno dell'elemento "select" di id "selector" (salvato in "elSelector"), che abbiano come valore e contenuto proprio i cardName.*/
-nameList.forEach((element) => {  // element è la stringa type
+/*Il forEach() sottostante ciclando sull'array "powerList" eseguirà una funzione su ciascun suo elemento (valori di cardName di cards) di modo che nel DOM si generino tutti i tag "option", all'interno dell'elemento "select" di id "selector" (salvato in "elSelector"), che abbiano come valore e contenuto proprio i cardName.*/
+powerList.forEach((element) => {  // element è la stringa type
   elSelector.innerHTML += `
     <option value="${element}">${element}</option>
   `
