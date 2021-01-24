@@ -38,8 +38,9 @@ const editions = {
 
 }
 
-
-const cards = [{
+//Qui di seguito le Cards-------------------------------------------------------
+const cards = [
+  {
 
   cardName: 'Grizzly Bears',
 
@@ -80,7 +81,7 @@ const cards = [{
 
     picture: 'images/g.png',  // da inserire immagine
     cardType: cardTypes[1],
-    cardObject: 'Bear',
+    cardObject: 'Tiger',
 
     editionType: editions['BL'],
 
@@ -92,7 +93,88 @@ const cards = [{
       toughness: 3
     }
 
+  },
+  {
+
+    cardName: 'Sviluppatore stanco',
+
+    cost: {
+      genericCostNumber: 1,
+      costFields: [ // colors array con riferimento a fieldCodes
+        fieldCodes[2],
+        fieldCodes[1]
+      ],
     },
+
+    picture: 'images/f.png',  // da inserire immagine
+    cardType: cardTypes[2],
+    cardObject: 'Bradipo',
+
+    editionType: editions['BL'],
+
+    description: 'Lo sviluppatore stanco è sempre in de-bit d\'ossigeno',
+    story: 'Lo sviluppatore stanco è una forma di essere umano in estinzione.',
+
+    score: {
+      power: 1,  // r
+      toughness: 1
+    }
+
+  },
+  {
+
+    cardName: 'Sviluppatore abile',
+
+    cost: {
+      genericCostNumber: 6,
+      costFields: [ // colors array con riferimento a fieldCodes
+        fieldCodes[3],
+        fieldCodes[4]
+      ],
+    },
+
+    picture: 'images/h.png',  // da inserire immagine
+    cardType: cardTypes[5],
+    cardObject: 'Cat',
+
+    editionType: editions['BL'],
+
+    description: 'Lo sviluppatore abile moltiplica i bit in byte!',
+    story: 'Lo sviluppatore abile è una forma di essere umano ricercato.',
+
+    score: {
+      power: 5,  // r
+      toughness: 5
+    }
+
+  },
+  {
+
+    cardName: 'Beep-Beep',
+
+    cost: {
+      genericCostNumber: 5,
+      costFields: [ // colors array con riferimento a fieldCodes
+        fieldCodes[0],
+        fieldCodes[3]
+      ],
+    },
+
+    picture: 'images/l.png',  // da inserire immagine
+    cardType: cardTypes[1],
+    cardObject: 'Road-runner',
+
+    editionType: editions['BL'],
+
+    description: 'Il Road-runner ti mostra sempre la schiena!',
+    story: 'Il Road-runner non è mai stato guardato in volto da nessuno.',
+
+    score: {
+      power: 5,  // r
+      toughness: 2
+    }
+
+  },
 ]
 
 console.log(cards);
