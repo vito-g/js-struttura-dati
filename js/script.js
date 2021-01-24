@@ -223,3 +223,7 @@ powerList.forEach((element) => {  // element è la stringa type
   `
 });
 // -------------------------------------------------------------------------------------------------------------------------------------------
+/*Attraverso il forEach e il template literal, visualizzo nell'html la lista di queste carte mostrando SOLO il nome della carta.*/
+
+//Quel che mi occorre è una costante in cui salvare la posizione dell'elemento del DOM di classe "container"
+const elContainer = document.getElementsByClassName('container')[0];
