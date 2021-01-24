@@ -193,3 +193,10 @@ console.log(nameList);
 
 //Vado a crearmi una cost in cui salvare la posizione dell'elemento "select" del DOM di modo da strutturare poi,in esso, qui in javascript, le opzioni che lo riguarderanno e che ho salvato in nameList attraverso il forEach applicato all'array cards:
 const elSelector = document.getElementById('selector');
+
+/*Il forEach() sottostante ciclando sull'array "nameList" eseguirà una funzione su ciascun suo elemento (valori di cardName di cards) di modo che nel DOM si generino tutti i tag "option", all'interno dell'elemento "select" di id "selector" (salvato in "elSelector"), che abbiano come valore e contenuto proprio i cardName.*/
+nameList.forEach((element) => {  // element è la stringa type
+  elSelector.innerHTML += `
+    <option value="${element}">${element}</option>
+  `
+});
