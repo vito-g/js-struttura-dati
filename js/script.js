@@ -189,3 +189,7 @@ cards.forEach((element) => {
 
 
 console.log(nameList);
+
+
+//Vado a crearmi una cost in cui salvare la posizione dell'elemento "select" del DOM di modo da strutturare poi,in esso, qui in javascript, le opzioni che lo riguarderanno e che ho salvato in nameList attraverso il forEach applicato all'array cards:
+const elSelector = document.getElementById('selector');
