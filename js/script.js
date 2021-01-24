@@ -216,7 +216,7 @@ console.log(powerList);
 //Vado a crearmi una cost in cui salvare la posizione dell'elemento "select" del DOM di modo da strutturare poi,in esso, qui in javascript, le opzioni che lo riguarderanno e che ho salvato in powerList attraverso il forEach applicato all'array cards:
 const elSelector = document.getElementById('selector');
 
-/*Il forEach() sottostante ciclando sull'array "powerList" eseguirà una funzione su ciascun suo elemento (valori di cardName di cards) di modo che nel DOM si generino tutti i tag "option", all'interno dell'elemento "select" di id "selector" (salvato in "elSelector"), che abbiano come valore e contenuto proprio i cardName.*/
+/*Il forEach() sottostante ciclando sull'array "powerList" eseguirà una funzione su ciascun suo elemento (valori di power di cards) di modo che nel DOM si generino tutti i tag "option", all'interno dell'elemento "select" di id "selector" (salvato in "elSelector"), che abbiano come valore e contenuto proprio i cardName.*/
 powerList.forEach((element) => {  // element è la stringa type
   elSelector.innerHTML += `
     <option value="${element}">${element}</option>
@@ -229,3 +229,11 @@ powerList.forEach((element) => {  // element è la stringa type
 const elContainer = document.getElementsByClassName('container')[0];
 
 /*Applico il forEach all'array di oggetti "cards", in modo da andare a ciclare su ogni oggetto dell'array. Recupero, così, i nomi delle card e genero la lista corrispondente in HTML */
+
+cards.forEach((element) => {
+  elContainer.innerHTML += `
+    <ul>
+      <li>${element.cardName}</li>
+    </ul>
+  `
+});
