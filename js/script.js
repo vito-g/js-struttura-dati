@@ -227,3 +227,5 @@ powerList.forEach((element) => {  // element è la stringa type
 
 //Quel che mi occorre è una costante in cui salvare la posizione dell'elemento del DOM di classe "container"
 const elContainer = document.getElementsByClassName('container')[0];
+
+/*Applico il forEach all'array di oggetti "cards", in modo da andare a ciclare su ogni oggetto dell'array. Recupero, così, i nomi delle card e genero la lista corrispondente in HTML */
