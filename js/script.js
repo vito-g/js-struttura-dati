@@ -178,3 +178,11 @@ const cards = [
 ]
 
 console.log(cards);
+// --------------------------------------------------------------------------------
+//Creo un array che ha per elementi i differenti valori associati alla chiave cardName presente negli oggetti dell'array cards.
+const nameList = [];
+cards.forEach((element) => {
+  if(!nameList.includes(element.cardName)) {
+    nameList.push(element.cardName);
+  }
+})
