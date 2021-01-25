@@ -202,23 +202,5 @@ i loro parametri*/
       return element.score.power === powerValue;
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+  //Vediamo cosa accade filtrando manualmente le carte per un valore di power pari a 5
+  console.log(filterByPower(5, cards));
