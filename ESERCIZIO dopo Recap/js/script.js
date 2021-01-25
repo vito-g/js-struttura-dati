@@ -182,3 +182,7 @@ console.log(cards);
 /*Quello che occorre fare è provare, quanto più possibile, ad atomizzare tutte le funzioni che ci occorreranno nello script.
 La loro atomizzazione le renderà abili ad accogliere, di volta in volta, i diversi valori degli argomenti che andranno a popolare, all\'occorenza,
 i loro parametri*/
+
+//Creiamo, dapprima una funzione per il FILTRAGGIO dei DATI:
+//La FX di Filtraggio sarà, tipicamente, innescata dai valori selezionati dall'utente relativi alle opzioni di una Select.
+//I parametri che, dunque, le occorrerannno saranno il "Valore Selezionato" e l'"Array" da filtrare.
