@@ -204,12 +204,12 @@ i loro parametri*/
     });
   }
   //Vediamo cosa accade filtrando manualmente le carte per un valore di power pari a 5
-  console.log(filterByPower(5, cards));
+  // console.log(filterByPower(5, cards));
 // ----
 //Ora mi occorre una FX che vada a Salvare la Posizione di un El del DOM In una Cost per poi andare a Stampare in essa del Codice HTML. Stamperemo una Lista dei Nomi delle Cards. Questa FX avrà, dunque, per parametri, l'ID dell'elemento del DOM oggetto del nostro interesse e l'array che andremo a ciclare con un forEach per recuperare le info che ci occorre visualizzare a schermo. Prima dobbiamo preparare nell'index l'elemento che accoglierà il codice strutturato in javascript:
 function render(DOMelementId, array) {
   const cardListHTMLelement = document.getElementById(DOMelementId);
-
+  cardListHTMLelement.innerHTML = ''; //Per resettare dopo ogni select i risultati stampati a video
   array.forEach((element) => {
     cardListHTMLelement.innerHTML += `<li>${element.cardName}</li>`;
   });
@@ -234,4 +234,7 @@ renderSelect('power-selector', powerValues); //Sistemerò i RENDER in stringhe r
 //Avendo già, preventivamente, caricato JQUERY nell HEAD dell'HTML posso selezionare molto più rapidamente l'elemento Select di id "power-selector"
 ${'#power-selector'}.change(function() {
   const selectValue = parseInt($(this).val()); //Il valore selezionato fra le option del select ($(this).val()) sarà salvato nella costante selectValue
-})
+  //Per collegare il Change alla FX che filtra l'array per valore di power devo invocare quella FX. Il suo risultato, lo devo conntestualmente salvare in una costante; come qui di seguito. I parametri che le passerò saranno il valore, fra le option, selezionato "selectValue" e l'array cards
+  const filteredArray = filterByPower(selectValue, cards);
+  render('ListaCarte', filteredArray);
+});
