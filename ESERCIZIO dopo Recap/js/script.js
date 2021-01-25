@@ -207,6 +207,13 @@ $(document).ready(function() {
   }
   //Vediamo cosa accade filtrando manualmente le carte per un valore di power pari a 5
   // console.log(filterByPower(5, cards));
+  //---
+  //Questa per Filtrare le carte per card type:
+  function filterByCardType(typeValue, array) {
+    return array.filter((element) => {
+      return element.cardType === typeValue;
+    });
+  }
   // ----
   //Ora mi occorre una FX che vada a Salvare la Posizione di un El del DOM In una Cost per poi andare a Stampare in essa del Codice HTML. Stamperemo una Lista dei Nomi delle Cards. Questa FX avrà, dunque, per parametri, l'ID dell'elemento del DOM oggetto del nostro interesse e l'array che andremo a ciclare con un forEach per recuperare le info che ci occorre visualizzare a schermo. Prima dobbiamo preparare nell'index l'elemento che accoglierà il codice strutturato in javascript:
   function render(DOMelementId, array) {
@@ -232,6 +239,7 @@ $(document).ready(function() {
   //Invochiamo la FX di render per il Select: dobbiamo farlo passando lei l'id dell'el del DOM di interesse e l'array che contiene i diversi valori per la chiave power e che dichiaro qui di seguito:
   const powerValues = [1,2,3,4,5]; //Che sistemerò in alto nel codice
   renderSelect('power-selector', powerValues); //Sistemerò i RENDER in stringhe ravvicinate titolate col commento RENDERING INIZIALE
+  renderSelect('card-type-selector', cardTypes); //Per inserire nel card-type-selector le opzioni relative a card type
   // ---
   //Ora, dovremo rendere funzionante la selezione delle option della select di modo che ad essa si restituiscano in output solo i nomi delle cards col valore di power selezionato. Il Metodo da utilizzare sul Select è il CHANGE.
   //Avendo già, preventivamente, caricato JQUERY nell HEAD dell'HTML posso selezionare molto più rapidamente l'elemento Select di id "power-selector"
@@ -248,5 +256,18 @@ $(document).ready(function() {
 
     }
   });
+  $('#card-type-selector').change(function() {
+    if($(this).val() === 'all') {
+      // alert ('seleziona un numero');
+      render('ListaCarte-per-type', cards);
+    } else {
+      const selectValue = ($(this).val()); //Il valore selezionato fra le option del select ($(this).val()) sarà salvato nella costante selectValue
+      //Per collegare il Change alla FX che filtra l'array per valore di power devo invocare quella FX. Il suo risultato, lo devo conntestualmente salvare in una costante; come qui di seguito. I parametri che le passerò saranno il valore, fra le option, selezionato "selectValue" e l'array cards
 
+      const filteredArray = filterByCardType(selectValue, cards);
+      render('ListaCarte-per-type', filteredArray);
+
+    }
+  });
+  // ---
 });
