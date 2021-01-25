@@ -186,3 +186,5 @@ i loro parametri*/
 //Creiamo, dapprima una funzione per il FILTRAGGIO dei DATI:
 //La FX di Filtraggio sarà, tipicamente, innescata dai valori selezionati dall'utente relativi alle opzioni di una Select.
 //I parametri che, dunque, le occorrerannno saranno il "Valore Selezionato" e l'"Array" da filtrare.
+//Inizialmente, dovremo Filtrare le Cards attraverso la proprietà "power":
+function filterByPower(powerValue, array) {}
