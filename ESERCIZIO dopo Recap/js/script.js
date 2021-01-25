@@ -216,7 +216,7 @@ function render(DOMelementId, array) {
 }
 
 //Proviamo la FX, passando lei come argomenti l'id dell' El del DOM selezionato e l'array da analizzare
-render('ListaCarte', cards);
+render('ListaCarte', cards); //Sistemerò i RENDER in stringhe ravvicinate titolate col commento RENDERING INIZIALE
 // ---
 //Strutturiamo ora da javascript il contenuto delle option della select già impostata in HTML
 function renderSelect(DOMelementId, array) {
@@ -228,4 +228,6 @@ function renderSelect(DOMelementId, array) {
 }
 //Invochiamo la FX di render per il Select: dobbiamo farlo passando lei l'id dell'el del DOM di interesse e l'array che contiene i diversi valori per la chiave power e che dichiaro qui di seguito:
 const powerValues = [1,2,3,4,5]; //Che sistemerò in alto nel codice
-renderSelect('power-selector', powerValues);
+renderSelect('power-selector', powerValues); //Sistemerò i RENDER in stringhe ravvicinate titolate col commento RENDERING INIZIALE
+// ---
+//Ora, dovremo rendere funzionante la selezione delle option della select di modo che ad essa si restituiscano in output solo i nomi delle cards col valore di power selezionato
