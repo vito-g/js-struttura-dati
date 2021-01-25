@@ -230,4 +230,8 @@ function renderSelect(DOMelementId, array) {
 const powerValues = [1,2,3,4,5]; //Che sistemerò in alto nel codice
 renderSelect('power-selector', powerValues); //Sistemerò i RENDER in stringhe ravvicinate titolate col commento RENDERING INIZIALE
 // ---
-//Ora, dovremo rendere funzionante la selezione delle option della select di modo che ad essa si restituiscano in output solo i nomi delle cards col valore di power selezionato
+//Ora, dovremo rendere funzionante la selezione delle option della select di modo che ad essa si restituiscano in output solo i nomi delle cards col valore di power selezionato. Il Metodo da utilizzare sul Select è il CHANGE.
+//Avendo già, preventivamente, caricato JQUERY nell HEAD dell'HTML posso selezionare molto più rapidamente l'elemento Select di id "power-selector"
+${'#power-selector'}.change(function() {
+  const selectValue = parseInt($(this).val()); //Il valore selezionato fra le option del select ($(this).val()) sarà salvato nella costante selectValue
+})
