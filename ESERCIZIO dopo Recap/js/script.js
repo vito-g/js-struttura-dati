@@ -187,14 +187,22 @@ i loro parametri*/
 //La FX di Filtraggio sarà, tipicamente, innescata dai valori selezionati dall'utente relativi alle opzioni di una Select.
 //I parametri che, dunque, le occorrerannno saranno il "Valore Selezionato" e l'"Array" da filtrare.
 //Inizialmente, dovremo Filtrare le Cards attraverso la proprietà "power":
-function filterByPower(powerValue, array) {
-  //Innanzitutto mi occorrerà una Cost in cui salvare l'Array Filtrato a partire dall'Array iniziale. In esso sistemeremo i soli Valori Possibili per la proprietà Power (element.score.power):
-  const filteredArray = array.filter((element) => {
-    return element.score.power === powerValue;
-  });
-  //Siamo all'interno di una funzione, dobbiamo inserire l'istruzione di return per restituire esternamente l'array elaborato
-  return (filteredArray);
+// function filterByPower(powerValue, array) {
+//   //Innanzitutto mi occorrerà una Cost in cui salvare l'Array Filtrato a partire dall'Array iniziale. In esso sistemeremo i soli Valori Possibili per la proprietà Power (element.score.power):
+//   const filteredArray = array.filter((element) => {
+//     return element.score.power === powerValue;
+//   });
+//   //Siamo all'interno di una funzione, dobbiamo inserire l'istruzione di return per restituire esternamente l'array elaborato
+//   return (filteredArray);
+//   }
+
+  //La FX può esser snellita eliminando dichiarazione e assegnazione di cost e "RITORNANDOLA" direttamente
+  function filterByPower(powerValue, array) {
+    return array.filter((element) => {
+      return element.score.power === powerValue;
+    });
   }
+
 
 
 
