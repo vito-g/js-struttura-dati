@@ -196,6 +196,7 @@ i loro parametri*/
 //   return (filteredArray);
 //   }
 
+// ----
   //La FX può esser snellita eliminando dichiarazione e assegnazione di cost e "RITORNANDOLA" direttamente
   function filterByPower(powerValue, array) {
     return array.filter((element) => {
@@ -204,3 +205,15 @@ i loro parametri*/
   }
   //Vediamo cosa accade filtrando manualmente le carte per un valore di power pari a 5
   console.log(filterByPower(5, cards));
+// ----
+//Ora mi occorre una FX che vada a Salvare la Posizione di un El del DOM In una Cost per poi andare a Stampare in essa del Codice HTML. Stamperemo una Lista dei Nomi delle Cards. Questa FX avrà, dunque, per parametri, l'ID dell'elemento del DOM oggetto del nostro interesse e l'array che andremo a ciclare con un forEach per recuperare le info che ci occorre visualizzare a schermo. Prima dobbiamo preparare nell'index l'elemento che accoglierà il codice strutturato in javascript:
+function render(DOMelementId, array) {
+  const cardListHTMLelement = document.getElementById(DOMelementId);
+
+  array.forEach((element) => {
+    cardListHTMLelement.innerHTML += `<li>${element.cardName}</li>`;
+  });
+}
+
+//Proviamo la FX, passando lei come argomenti l'id dell' El del DOM selezionato e l'array da analizzare
+render('ListaCarte', cards);
