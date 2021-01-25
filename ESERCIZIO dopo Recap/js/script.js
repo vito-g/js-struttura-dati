@@ -271,4 +271,11 @@ $(document).ready(function() {
     }
   });
   // ---
+
+  cards.forEach((element) => {
+    let elCardsContainer = document.getElementById('cards-container');
+    elCardsContainer.innerHTML += `
+    <div class="cards"></div>
+    `
+  });
 });

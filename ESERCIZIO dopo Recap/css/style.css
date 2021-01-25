@@ -40,3 +40,24 @@ ul {
 .search {
  width: 40%;
 }
+
+#cards-container {
+  display: flex;
+  height: 100vh;
+  background-color: lightgrey;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+}
+
+.cards {
+  width: 220px;
+  height: 350px;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(70, 70, 70, 0.2) 2px 2px 2px 1px, rgba(70, 70, 70, 0.2) 2px 2px 2px 1px;
+  text-align: center;
+  display: flex;
+}
