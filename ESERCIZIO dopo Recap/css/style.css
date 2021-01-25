@@ -15,7 +15,7 @@ body {
 
 header {
   height: 180px;
-  background-color: lightblue;
+  background-color: #DAA520;
   margin: auto;
   padding: 20px;
 }
@@ -58,12 +58,13 @@ li {
 
 #cards-container {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 180px);
   background-color: lightgrey;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 28px 30px;
+  /* padding: 28px 30px; */
 }
 
 .cards {
