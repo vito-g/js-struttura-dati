@@ -237,3 +237,45 @@ cards.forEach((element) => {
     </ul>
   `
 });
+// ----------------------------------------------------------------------------------------------------------------------------------------
+//Quel che mi occorre, ora, è rendere funzionante il select precedentemente creato di moda da filtrare i nomi in base alla selezione delle opzioni di power
+
+
+
+//a mezzo JQUERY, opportunamente caricato nell'head del file index:
+const elementSelector = $('#selector');
+
+//Salvo nella const "elContainer" la posizione nel DOM relativa all'elemento di classe "container" in cui andrò poi a stampare i miei box.
+// const elContainer = document.getElementsByClassName('container')[0];
+
+
+//Attraverso il metodo CHANGE eseguo una FX che applico  all'elemento del DOM "select" di id "selector"(salvato nella costante elementSelector). Vado, cioè, a salvare, con la funzione, nella "let" di nome valore, il value dell'option selezionata (identificata dalla parola chiave "this"- con JQUERY $(this)) di select.
+elementSelector.change(function() {
+  let valore = $(this).val();
+
+  elContainer.innerHTML = ``;// Mi consente di resettare il risultato di stampa in pagina dovuto alla scelta di selezione precedente
+
+
+  //Creo un array inserendo in esso unicamente gli elementi di cards che hanno power di valore uguale
+  let arrayPerPower = cards.filter((element)=>{ //(**)
+  return element.score.power === valore
+  });
+
+  /*A questo punto, però, mi resta che la select risponda anche all'opzione ALL per la quale ho impostato nell'index.html value uguale a 'all'. Perchè le tre righe di codice che seguono funzionino, occorre mutare l'arrayPerPower da const a let: solo così posso garantirgli una nuova assegnazione--->(**)*/
+
+  if (valore === 'all') {
+    arrayPerPower = cards;
+    console.log(arrayPerPower);
+  }
+
+  console.log(arrayPerPower);
+
+  /*Vado a ciclare l'array creato di modo che per ciascun valore di power ,selezionato attraverso il select, stampi in pagina i nomi delle card relativi a quel valore di power*/
+  arrayPerPower.forEach((element) => {  // element è la stringa cardName
+    elContainer.innerHTML += `
+    <ul>
+      <li>${element.cardName}</li>
+    </ul>
+    `
+  });
+});
