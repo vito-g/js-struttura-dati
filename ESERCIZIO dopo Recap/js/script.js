@@ -179,3 +179,6 @@ const cards = [
 
 console.log(cards);
 // --------------------------------------------------------------------------------
+/*Quello che occorre fare è provare, quanto più possibile, ad atomizzare tutte le funzioni che ci occorreranno nello script.
+La loro atomizzazione le renderà abili ad accogliere, di volta in volta, i diversi valori degli argomenti che andranno a popolare, all\'occorenza,
+i loro parametri*/
