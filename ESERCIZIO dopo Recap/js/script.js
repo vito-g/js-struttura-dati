@@ -235,7 +235,7 @@ $(document).ready(function() {
   // ---
   //Ora, dovremo rendere funzionante la selezione delle option della select di modo che ad essa si restituiscano in output solo i nomi delle cards col valore di power selezionato. Il Metodo da utilizzare sul Select è il CHANGE.
   //Avendo già, preventivamente, caricato JQUERY nell HEAD dell'HTML posso selezionare molto più rapidamente l'elemento Select di id "power-selector"
-  ${'#power-selector'}.change(function() {
+  $('#power-selector').change(function() {
     const selectValue = parseInt($(this).val()); //Il valore selezionato fra le option del select ($(this).val()) sarà salvato nella costante selectValue
     //Per collegare il Change alla FX che filtra l'array per valore di power devo invocare quella FX. Il suo risultato, lo devo conntestualmente salvare in una costante; come qui di seguito. I parametri che le passerò saranno il valore, fra le option, selezionato "selectValue" e l'array cards
     const filteredArray = filterByPower(selectValue, cards);
