@@ -226,8 +226,8 @@ $(document).ready(function() {
   }
 
   //Proviamo la FX, passando lei come argomenti l'id dell' El del DOM selezionato e l'array da analizzare
-  render('ListaCarte', cards); //Sistemerò i RENDER in stringhe ravvicinate titolate col commento RENDERING INIZIALE
-  render('ListaCarte-per-type', cards);
+  // render('ListaCarte', cards); //Sistemerò i RENDER in stringhe ravvicinate titolate col commento RENDERING INIZIALE
+  // render('ListaCarte-per-type', cards);
   // ---
   //Strutturiamo ora da javascript il contenuto delle option della select già impostata in HTML
   function renderSelect(DOMelementId, array) {
