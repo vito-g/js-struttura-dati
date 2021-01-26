@@ -284,7 +284,9 @@ $(document).ready(function() {
     elCardsContainer.innerHTML ='';
     array.forEach((element) => {
       elCardsContainer.innerHTML += `
-          <div class="cards"></div>
+          <div class="cards">
+            ${element.cardName}
+          </div>
           `
     });
   }
