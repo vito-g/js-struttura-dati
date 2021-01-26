@@ -254,6 +254,7 @@ $(document).ready(function() {
 
       const filteredArray = filterByPower(selectValue, cards);
       render('ListaCarte', filteredArray);
+      renderMain('cards-container', filteredArray);
 
     }
   });
@@ -267,15 +268,31 @@ $(document).ready(function() {
 
       const filteredArray = filterByCardType(selectValue, cards);
       render('ListaCarte-per-type', filteredArray);
-
+      renderMain('cards-container', filteredArray);
     }
   });
   // ---
 
-  cards.forEach((element) => {
-    let elCardsContainer = document.getElementById('cards-container');
-    elCardsContainer.innerHTML += `
-    <div class="cards"></div>
-    `
-  });
+  // cards.forEach((element) => {
+  //   let elCardsContainer = document.getElementById('cards-container');
+  //   elCardsContainer.innerHTML += `
+  //   <div class="cards"></div>
+  //   `
+  // });
+  function renderMain (DOMelementId, array) {
+    let elCardsContainer = document.getElementById(DOMelementId);
+    // elCardsContainer.innerHTML ='';
+    array.forEach((element) => {
+      elCardsContainer.innerHTML += `
+          <div class="cards"></div>
+          `
+    });
+  }
+  // renderMain('cards-container', cards);
+
+
+
+
+
+
 });
