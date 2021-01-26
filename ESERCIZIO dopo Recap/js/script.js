@@ -281,7 +281,7 @@ $(document).ready(function() {
   // });
   function renderMain (DOMelementId, array) {
     let elCardsContainer = document.getElementById(DOMelementId);
-    // elCardsContainer.innerHTML ='';
+    elCardsContainer.innerHTML ='';
     array.forEach((element) => {
       elCardsContainer.innerHTML += `
           <div class="cards"></div>
