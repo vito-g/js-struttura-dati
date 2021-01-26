@@ -76,6 +76,11 @@ li {
   border-radius: 10px;
   background-color: white;
   box-shadow: rgba(70, 70, 70, 0.2) 2px 2px 2px 1px, rgba(70, 70, 70, 0.2) 2px 2px 2px 1px;
-  /* text-align: center; */
+  text-align: center;
   display: flex;
+}
+
+img {
+  transform: scale(0.25);
+  margin: auto;
 }

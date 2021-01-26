@@ -162,7 +162,7 @@ $(document).ready(function() {
         ],
       },
 
-      picture: 'images/l.png',  // da inserire immagine
+      picture: 'images/Beep-Beep.jpg',  // da inserire immagine
       cardType: cardTypes[1],
       cardObject: 'Road-runner',
 
@@ -286,6 +286,7 @@ $(document).ready(function() {
       elCardsContainer.innerHTML += `
           <div class="cards">
             ${element.cardName}
+            <img src="${element.picture}" alt="${element.picture}">
           </div>
           `
     });
